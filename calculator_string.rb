@@ -6,8 +6,15 @@ class CalculatorString
 
     # Split by commas and new lines
     parts = value.split(/[,\n]/)
+		sum = 0
 
-    # Convert parts to integers and sum them up
-    sum = parts.map(&:to_i).sum
+		parts.map(&:to_i).each do |num|
+      if num.negative?
+        raise "negative numbers not allowed please give positive number #{num}"
+      else
+        sum += num
+      end
+    end
+    sum
   end
 end

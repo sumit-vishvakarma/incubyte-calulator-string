@@ -27,5 +27,10 @@ RSpec.describe CalculatorString do
         expect(CalculatorString.add("1\n2,3,8")).to eq(14)
       end
     end
+    context "handle non negative value" do
+      it "raises an error for negative numbers" do
+        expect { CalculatorString.add("-1") }.to raise_error("negative numbers not allowed please give positive number -1")
+      end
+    end
 	end
 end

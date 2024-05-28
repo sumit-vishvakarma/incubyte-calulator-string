@@ -17,5 +17,10 @@ RSpec.describe CalculatorString do
         expect(CalculatorString.add("1,2")).to eq(3)
       end
     end
+    context "addition of multiple values" do
+      it "add multiple value" do
+        expect(CalculatorString.add("1,2,4,5,5")).to eq(17)
+      end
+    end
 	end
 end

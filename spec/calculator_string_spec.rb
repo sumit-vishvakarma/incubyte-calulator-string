@@ -32,5 +32,10 @@ RSpec.describe CalculatorString do
         expect { CalculatorString.add("-1") }.to raise_error("negative numbers not allowed please give positive number -1")
       end
     end
+    context "handle custom delimiter" do
+      it "handles custom delimiter and adds the integers" do
+        expect(CalculatorString.add("//;\n1;2")).to eq(3)
+      end
+    end
 	end
 end
